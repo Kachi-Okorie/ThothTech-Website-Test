@@ -1,0 +1,113 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Company Operations',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="companyoperations"
+    title="Company Operations"
+    image={{
+      src: '/companyopslogo.png',
+      alt: 'Colorful Image',
+      width: '1600',
+      height: '1300',
+    }}
+  >
+    <Fragment slot="content">
+      Thoth Tech's Company Operations department serves as the hub that manages the entirety of the company's functions.
+      Our primary objective is to provide the necessary policies, procedures, and resources that empower each student to
+      concentrate on their daily tasks, thereby propelling them toward their individual goals and objectives.<br />
+      <br />
+       Given our company's frequent turnover every three months, our team is dedicated to ensuring seamless business
+      continuity. We achieve this by establishing transparent guidelines and structures that enable incoming teams to
+      seamlessly pick up where the previous student cohort left off.<br /><br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'We ensure business continuity for an ever evolving company.',
+      },
+      {
+        title: 'We guarantee increased visibility to all products, projects, and company policies.',
+      },
+      {
+        title:
+          'By eliminating all technical administration duties, we enable others to work more effectively, giving employees more time to concentrate on making amazing products.',
+      },
+      {
+        title:
+          'We amplify the voice of the leadership by creating and enforcing policies and processes to improve company posture.',
+      },
+      {
+        title:
+          'We arrange workshops and knowledge-sharing sessions targeting specific areas where members of the team require enhancement or improvement.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why we are important.</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    id="features"
+    title="Latest Contribution to the Company"
+    items={[
+      {
+        description:
+          'Developed a training documentation aimed at enhancing employee competencies in key areas necessary for success in company projects.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        description:
+          'A website was established to enhance the accessibility of company policies, processes, and pertinent documentation necessary for employees to thrive within the organization. ',
+        icon: 'tabler:bulb',
+      },
+      {
+        description:
+          'Developed a policy for managing GitHub usage within Thoth Tech, providing guidelines for its effective utilization. ',
+        icon: 'tabler:brand-github',
+      },
+      {
+        description:
+          'Established a Documentation guideline outlining procedures for creating and publishing documents within Thoth Tech.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        description:
+          'Created a company website to showcase our identity and brand on a global scale, making our information accessible to a wide audience.',
+        icon: 'tabler:brand-webflow',
+      },
+    ]}
+  />
+</Layout>

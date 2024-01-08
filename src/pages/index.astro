@@ -1,0 +1,139 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import Button from '~/components/ui/Button.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Thoth Tech',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'About Us',
+        href: '#aboutus',
+        target: '_blank',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/heroimg.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Welcome to <span class="text-accent dark:text-white highlight"> Thoth Tech</span> where learning is made exciting
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Our</span> innovative tools redefine the joy of learning.</span
+      >
+       They empower you to acquire knowledge seamlessly, whether you are at home or in a traditional classroom setting.
+      These products facilitate effortless interactions between students and tutors, ensuring a path to sustained
+      success.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="aboutus"
+    title="About Us"
+    image={{
+      src: '~/assets/images/aboutus3.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      Thoth Tech is a software development company currently building from the ground up in Melbourne, Australia. Thoth
+      Tech’s mission is to build, operate, and deploy education technologies, creating tools that enhance education
+      outcomes by empowering students, connecting them with tutors, and facilitating personalised learning experiences.
+      <br />
+       We value our people, and we value excellence. We are people-focused, aiming to produce sustainable products of
+      excellent quality, and provide frameworks that supply a safe environment for learning and support of our team.
+      <br />
+       Deakin University implemented a Capstone program aimed at preparing students for real-world scenarios. This
+      initiative involves partnering with companies such as Thoth Tech, enabling students to gain industry exposure
+      across two trimesters. Upon concluding the Capstone program within this timeframe, students transition to other
+      units and move forward from their engagement with the company.
+      <br />
+       Some of the work done by students can be found in our Documentation Website.
+      <br />
+      <br />
+      <Button variant="primary" href="https://main--strong-fairy-c1bde1.netlify.app/" target="_blank">
+        Documentation Website
+      </Button>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Products"
+    subtitle="Our products are focused on solving relevant IT needs."
+    items={[
+      {
+        title: 'OnTrack',
+        description:
+          'OnTrack is one of the bigger projects in the company and is a live production system that is in use at Deakin University, it has been consistently improved and built upon to provide an exceptional learning tool for students and staff at Deakin. Its technology stack consists of a Ruby on Rails back end and an Angular JS / Angular 15 front end. There are a variety of projects to enhance and upgrade this product that students can work on.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'CourseFlow',
+        description:
+          'CourseFlow aims to assist students in planning and comprehending the requirements and structuring of university courses. Users can generate and adjust their CourseMap to account for changes. For instance, a student will be able to see their expected graduation date or complications that may arise if they complete units in a particular order or study load.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Company Operations',
+        description:
+          'This team oversees the entire operations of Thoth Tech and strives to make things easier. We aim to make the onboarding process as smooth and clear as possible, as well as increase the knowledge of our seniors in meaningful ways while creating policies to improve the wellbeing of all company employees.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Art Gallery',
+        description:
+          'The Art Gallery is a product being created to help sell and advertise rural Art in Australia. The project is in production not only for its artistic merits, but through its development the team at the Art Gallery hope to showcase and introduce webapp development to newer students earlier in their I.T. career.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'SplashKit',
+        description:
+          'Splashkit is an all-purpose toolkit for beginners built in C++ and can be used with C++ and C#. Deakin University uses it to introduce students to programming through its easy-to-use functions.',
+        icon: 'tabler:components',
+      },
+    ]}
+  />
+
+  <!-- Features Widget **************** -->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts title="Find out more content in our Blog" />
+</Layout>

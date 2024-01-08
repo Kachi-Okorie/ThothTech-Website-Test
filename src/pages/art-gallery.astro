@@ -1,0 +1,91 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Art Gallery',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="artgallery"
+    title="Art Gallery"
+    image={{
+      src: '/artgallerylogo.png',
+      alt: 'Colorful Image',
+      width: '1600',
+      height: '1300',
+    }}
+  >
+    <Fragment slot="content">
+      Indigenous and rural artists often face barriers in accessing the broader market, limiting their opportunities for
+      income and recognition. Our platform seeks to eliminate these barriers by leveraging modern technology to empower
+      artists to reach a wider consumer base, while bringing diverse cultures together.<br />
+      <br />
+       We aim to deliver a highly available and scalable ecommerce platform that will allow for ease of sale of artwork
+      by small local artists. We plan to do this with our easily maintained C# minimal RESTful API, Vue frontend, and
+      our suite of other technologies used in streamlining the development pf our product.<br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Features"
+    subtitle="An overview of art gallery's features, both publicly available and some in private preview."
+    items={[
+      {
+        title: 'Artist Profiles',
+        description: "This consists of arts produced by a particular artist that can be purchased using the application.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Digital Gallery',
+        description:
+          "A digital space where visitors can view and appreciate art pieces without physically visiting a physical art gallery or shop.",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'E-Commerce Integration',
+        description:
+          'Enables the seamless selling and buying of artwork through the art gallery platform.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Artist Collaboration',
+        description:
+          "Allows for collaborative efforts between artists to create, promote, or sell artwork through our platform.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Community Engagement',
+        description:
+          'Allows for active interaction with the audience, artists, and art enthusiasts within the digital space.',
+        icon: 'tabler:building-community',
+      },
+      {
+        title: 'Online Exhibition',
+        description: 'Curated displays or showcases of artworks presented virtually through our digital platform.',
+        icon: 'tabler:app-window-filled',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+</Layout>

@@ -1,0 +1,87 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="splashkit"
+    title="SplashKit"
+    image={{
+      src: '/splashkitlogo.png',
+      alt: 'Colorful Image',
+      width: '1600',
+      height: '1300',
+    }}
+  >
+    <Fragment slot="content">
+      SplashKit serves as an introductory, versatile software toolkit designed for beginners, aiding in the initiation
+      of programming skills through its user-friendly functions. Those involved in this project possess strong expertise
+      in C++, C#, and Linux-based systems, particularly advantageous for Raspberry Pi projects.<br />
+      <br />
+       The team has successfully crafted several impressive functionalities, including an arcade machine base image,
+      established a tutorial site dedicated to educating users about SplashKit and its application, among other notable
+      achievements. Continuously striving for enhancement, the team remains dedicated to refining the product and
+      incorporating new features to enhance its user experience.<br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Learn more',
+        href: 'https://splashkit.io/',
+        target: '_blank',
+      },
+    ]}
+    title="SplashKit Tutorial"
+    subtitle="Embark on a fresh learning journey by exploring the diverse SplashKit resources available. These materials will assist you in initiating your journey with the product and empower you to create thrilling features using its capabilities."
+  />
+
+  <Features
+    id="features"
+    title="Latest Features"
+    items={[
+      {
+        title: 'Asteroids',
+        description:
+          'Asteroids is a top-down single player or co-op shooter that has you, the player, flying around and surviving an onslaught of rocks. Aim for a high score, do not lose your hearts before your friend, and maneuver around dangers and rack up that score!',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'SplashKit Tutorial',
+        description:
+          'The tutorial platform is dedicated to providing a comprehensive series of tutorials that aim to help readers learn how to effectively use Splashkit, a versatile framework supporting C++, C#, Python, and Pascal programming languages.',
+        icon: 'tabler:brand-blogger',
+      },
+      {
+        title: 'DX Ball Game',
+        description:
+          'DX Ball Game, also known as Breakout, which is an arcade video game designed to be played on arcade machines and raspberry pi-based units. The game is made to assist future students in developing games and understanding the fundamentals of C++ and the coding language with Splashkit.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  
+</Layout>

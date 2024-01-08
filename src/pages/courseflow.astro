@@ -1,0 +1,71 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'CourseFlow',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="courseflow"
+    title="Courseflow"
+    image={{
+      src: '/courseflowlogo.png',
+      alt: 'Colorful Image',
+      width: '1600',
+      height: '1300',
+    }}
+  >
+    <Fragment slot="content">
+      At Deakin University, a large repertoire of courses are available for potential students to enrol in to help shape
+      their future career goals. Each of these courses will have a set of requirements ranging from minimum credit
+      points achieved, completion of core units and completion of minor/major sequences with required units etc.<br />
+      <br />
+       These course and unit requirements can prove to be a challenge to keep track off and manage for some students. As
+      such, there is a need for a tool that can help students plan their course and help them manage their course and
+      unit requirements.<br /><br />
+       Courseflow is a product which is in its development stage. It aims to provide an easy-to-use interface for
+      students to plan their degree and be capable of considering course and unit requirements.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    id="features"
+    title="Preview Features"
+    items={[
+      {
+        title: 'Course Map',
+        description:
+          'The presentation of the course map will initially vary depending on the selected course. To ensure user clarity, the course requirements and the progress toward fulfilling them will be distinctly outlined. This will involve a comparison between the current units displayed in the course map and the specified course requirements. The course map functionality will allow for the drag-and-drop capability, enabling users to move units into designated slots.',
+        icon: 'tabler:map',
+      },
+      {
+        title: 'Unit Selection',
+        description:
+          'This feature comprises two essential components. Firstly, core units will be conveniently displayed to users through a window or panel, already available for drag-and-drop functionality. Secondly, electives will feature a distinct interface, akin to the course, requiring a query system to filter units based on user-defined criteria. In both these components, units will be equipped with a clear indicator denoting their validity for selection based on the existing course map settings.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Requirements Indicators',
+        description:
+          'The presentation of course requirements alongside the ongoing progress is crucial in the interface. This includes showcasing unit prerequisites and other specific requirements, demonstrating the current progress towards fulfilling these criteria (such as completing a specific number of units, like 2 SIT coded units). To facilitate this display accurately, the course and unit data must be intricately linked with the defined requirements. This data will then be cross-referenced with the current course map settings to ensure that the visuals accurately reflect the progress and fulfillment status of these requirements.',
+        icon: 'tabler:highlight',
+      },
+    ]}
+  />
+</Layout>
